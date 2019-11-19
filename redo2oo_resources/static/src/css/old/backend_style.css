@@ -1,0 +1,95 @@
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    background-color: none !important;
+}
+/*.navbar-inverse .navbar-nav > li > a {
+    background-color: #31bff5;
+    color: #000000;
+}*/
+.navbar-inverse, .navbar-inverse .navbar-nav > li > a{
+    background-color: #31bff5;
+    color: #fff !important;
+}
+ .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus{
+    color: #000 !important;
+    background: none !important;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus{
+    background: none !important;
+}
+.panel-primary > .panel-heading {
+
+    background-color: #31bff5;
+
+    border-color: #31bff5;
+
+    color: #ffffff;
+
+}
+.kanban_html_preview {
+  font-size:30px;
+  width:1000px;
+  text-indent:15px;
+}
+#oe_main_menu_navbar li a, #oe_main_menu_navbar li button {
+    padding: 8px 8px 8px 8px;
+    margin-top: 4px;
+    font-size: 14px;
+}
+.navbar-inverse, .navbar-inverse .navbar-nav > li > a {
+    background-color:  #61C4F0;
+    color: #222222;
+}
+.navbar-inverse{
+    border-color:  #61C4F0;
+}
+
+.openerp .nav-pills > li.active > a, .openerp .badge, .openerp a.list-group-item.active > a, .openerp .nav-pills > li.active a:hover, .openerp .nav-pills > li.active a:focus, .openerp a.list-group-item.active a:hover, .openerp a.list-group-item.active a:focus {
+    background-color: #61c4f0;
+}
+
+.oe_button_box .oe_stat_button .o_button_icon {
+    color: #61C4F0;
+}
+.openerp .oe_secondary_menu_section, .openerp .oe_secondary_menu_section > .oe_menu_leaf{
+    color: #61C4F0;
+}
+.openerp .oe_secondary_menu, .openerp .oe_horizontal_separator{
+    color: #61C4F0;
+}
+.o_kanban_view.o_kanban_ungrouped {
+    padding:0 !important;
+}
+.oe_form_field_html_text .note-editable{
+    color: inherit !important;
+    font-size: inherit !important;
+}
+
+/* roberts kanban stuff */
+.oe_kanban_branch_branch {
+    background-color: #b2b2b2;
+}
+.oe_kanban_main_branch {
+    background-color: #61c4f0;
+}
+.oe_kanban_person_person {
+    background-color: #ededed;
+}
+.oe_kanban_main_person {
+    background-color: #def3fc;
+}
+.o_kanban_image {
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+/* summary style for cms page */
+.summary {
+   background-color: #d3e5f2;
+}
+.fa.fa-check-square-o {
+    color: green;
+}
+.fa.fa-ban {
+    color: red;
+}
+

@@ -1,0 +1,281 @@
+*commit 8e25fb679794198c4e7c1563f8b368e4c96360f7
+Author: Hilar AK <hilar@cybrosys.in>
+Date:   Wed Feb 15 16:04:40 2017 +0530
+
+    removed extra contents from users
+
+
+* 68a0a3c - (HEAD, origin/Event_config_and_default_setting_of_value, Event_config_and_default_setting_of_value) Updated teh event cms config (26 seconds ago) <Hil
+ +
+|      root_cms_page_id = fields.Many2one('cms.page', "Root CMS Page")
+|
+| -
+| +    def get_default_root_cms_page_id(self, cr, uid, ids, context=None):
+| +        """
+| +        Getting default config values
+| +        :param cr:
+| +        :param uid:
+| +        :param ids:
+| +        :param context:
+| +        :return:
+| +        """
+| +        ir_values = self.pool.get('ir.values')
+| +        root_cms_page_id = ir_values.get_default(cr, uid, 'event.settings', 'root_cms_page_id')
+| +        return {
+| +            'root_cms_page_id': root_cms_page_id,
+| +        }
+| +
+| +    def set_default_root_cms_page_id(self, cr, uid, ids, context=None):
+| +        """
+| +        setting default values
+| +        :param cr:
+| +        :param uid:
+| +        :param ids:
+| +        :param context:
+| +        :return:
+| +        """
+| +        ir_values = self.pool.get('ir.values')
+| +        wizard = self.browse(cr, uid, ids)[0]
+| +        if wizard.root_cms_page_id:
+| +            root_cms_page_id = wizard.root_cms_page_id
+| +            ir_values.set_default(cr, SUPERUSER_ID, 'event.settings', 'root_cms_page_id', root_cms_page_id.id)
+| +        else:
+| +            root_cms_page_id = False
+| +            ir_values.set_default(cr, SUPERUSER_ID, 'event.settings', 'root_cms_page_id', root_cms_page_id)
+| \ No newline at end of file
+| diff --git a/views/views.xml b/views/views.xml
+| index 764b311..f230665 100644
+| --- a/views/views.xml
+| +++ b/views/views.xml
+| @@ -27,6 +27,10 @@
+|              <field name="model">event.settings</field>
+|              <field name="arch" type="xml">
+|                  <form>
+| +                    <header>
+| +                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+| +                        <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+| +                    </header>
+|                      <group string="Event CMS Configuration">
+|                          <group>
+|                              <field name="root_cms_page_id" widget="selection"/>
+
+* 5249ccd - (origin/cms_admin_config, cms_admin_config) Change Log Updated (25 hours ago) <Hilar AK>
+* 4933739 - All configurations are now under teh cms_admin (25 hours ago) <Hilar AK>
+cybrosys@cybrosys:~/hilar/GITCLONES/website_cms_addons$ git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+* 68a0a3c - (HEAD, origin/Event_config_and_default_setting_of_value, Event_config_and_default_setting_of_value) Updated teh event cms config (35 seconds ago) <Hil
+* 5249ccd - (origin/cms_admin_config, cms_admin_config) Change Log Updated (25 hours ago) <Hilar AK>
+* 4933739 - All configurations are now under teh cms_admin (25 hours ago) <Hilar AK>
+* b89fac2 - (origin/HEAD, origin/9.0, 9.0) Add changelog (25 hours ago) <hilar>
+* 5e5cdf6 - Update Style.css (6 days ago) <hilar>
+*   84dda11 - Merge branch 'update_1_02_2017' into '9.0' (13 days ago) <Robert Rottermann>
+|\
+| * 3f3bf00 - (origin/update_1_02_2017) Update website_custom_home.js (13 days ago) <hilar>
+| * fac49eb - for portrs>1199 (13 days ago) <Hilar>
+| * bcb8bd6 - jsut added sme changes in js (13 days ago) <Hilar>
+* |   2df29b9 - Merge branch 'update_31_01_2017' into '9.0' (2 weeks ago) <Robert Rottermann>
+|\ \
+| * \   702c1ea - (origin/update_31_01_2017) Merge branch '9.0' into 'update_31_01_2017' (2 weeks ago) <hilar>
+| |\ \
+| |/ /
+|/| /
+| |/
+* | 667e70a - Update templates.xml menu checking (2 weeks ago) <hilar>
+:...skipping...
+* 68a0a3c - (HEAD, origin/Event_config_and_default_setting_of_value, Event_config_and_default_setting_of_value) Updated teh event cms config (35 seconds ago) <Hil
+* 5249ccd - (origin/cms_admin_config, cms_admin_config) Change Log Updated (25 hours ago) <Hilar AK>
+* 4933739 - All configurations are now under teh cms_admin (25 hours ago) <Hilar AK>
+* b89fac2 - (origin/HEAD, origin/9.0, 9.0) Add changelog (25 hours ago) <hilar>
+* 5e5cdf6 - Update Style.css (6 days ago) <hilar>
+*   84dda11 - Merge branch 'update_1_02_2017' into '9.0' (13 days ago) <Robert Rottermann>
+|\
+| * 3f3bf00 - (origin/update_1_02_2017) Update website_custom_home.js (13 days ago) <hilar>
+| * fac49eb - for portrs>1199 (13 days ago) <Hilar>
+| * bcb8bd6 - jsut added sme changes in js (13 days ago) <Hilar>
+* |   2df29b9 - Merge branch 'update_31_01_2017' into '9.0' (2 weeks ago) <Robert Rottermann>
+|\ \
+| * \   702c1ea - (origin/update_31_01_2017) Merge branch '9.0' into 'update_31_01_2017' (2 weeks ago) <hilar>
+| |\ \
+| |/ /
+|/| /
+| |/
+* | 667e70a - Update templates.xml menu checking (2 weeks ago) <hilar>
+* |   aed58a9 - Merge branch 'blogs_removed' into '9.0' (2 weeks ago) <Robert Rottermann>
+|\ \
+| | * 070137c - small changes on responsive (2 weeks ago) <Hilar>
+| |/
+| * a401f69 - (origin/blogs_removed) blogs removed (2 weeks ago) <Hilar>
+|/
+*   acfa3d5 - Merge branch 'Update_27_01_2017' into '9.0' (3 weeks ago) <Robert Rottermann>
+|\
+| * 32a0eca - (origin/Update_27_01_2017) Adding comments for lines and functions (3 weeks ago) <Hilar>
+|/
+* e1bf27c - changed Afbs to AFBS (3 weeks ago) <robertrottermann>
+*   759312d - Merge branch 'changes_21_01_2017' into '9.0' (3 weeks ago) <Robert Rottermann>
+|\
+| * 75224fc - (origin/changes_21_01_2017) css (3 weeks ago) <Hilar>
+* |   7698fba - Merge branch 'changes_19_01_2017' into '9.0' (4 weeks ago) <Robert Rottermann>
+|\ \
+| |/
+| * 22df5ba - (origin/changes_19_01_2017) style changes (4 weeks ago) <Hilar>
+* |   7d736a9 - Merge branch 'changes_19_01_2017' into '9.0' (4 weeks ago) <Robert Rottermann>
+|\ \
+| * \   4145362 - Merge branch '9.0' into 'changes_19_01_2017' (4 weeks ago) <hilar>
+| |\ \
+| |/ /
+|/| /
+| |/
+* |   cb5e695 - Merge branch 'update_17' into '9.0' (4 weeks ago) <Robert Rottermann>
+|\ \
+| * | 56c4c62 - (origin/update_17) update_17 (4 weeks ago) <Hilar>
+* | |   65cf588 - Merge branch 'css_changes_padd' into '9.0' (5 weeks ago) <Robert Rottermann>
+|\ \ \
+| |/ /
+| | * 51ff396 - css, js (4 weeks ago) <Hilar>
+| |/
+| * 557607b - (origin/css_changes_padd) css chnages (5 weeks ago) <Hilar>
+|/
+* 679cd33 - style added (7 weeks ago) <Hilar>
+*   b051488 - Merge branch 'main_menu_slideup' into '9.0' (8 weeks ago) <Robert Rottermann>
+|\
+| * 945c0a8 - (origin/main_menu_slideup) main menu slide (8 weeks ago) <Hilar>
+* |   115737f - Merge branch 'animation' into '9.0' (8 weeks ago) <Robert Rottermann>
+|\ \
+| |/
+| * b15b705 - (origin/animation) animatipon (8 weeks ago) <Hilar>
+* |   5b04775 - Merge branch 'Menu_alignment_odoo_header_removal' into '9.0' (8 weeks ago) <Robert Rottermann>
+|\ \
+| |/
+| * a108910 - (origin/Menu_alignment_odoo_header_removal) removed odoo header and menu alignment , js to adjust css (8 weeks ago) <Hilar>
+* |   cac8a16 - Merge branch 'menu' into '9.0' (8 weeks ago) <Robert Rottermann>
+|\ \
+| |/
+| * 756cb1c - (origin/menu) menu for all (8 weeks ago) <Hilar>
+* |   ffaf066 - Merge branch 'security_and_css_updation' into '9.0' (9 weeks ago) <Robert Rottermann>
+|\ \
+| |/
+| * f65dbba - (origin/security_and_css_updation) css and security ADD (9 weeks ago) <Hilar>
+|/
+*   aa9caa2 - Merge branch 'sequence_checking_and_container_width' into '9.0' (9 weeks ago) <Robert Rottermann>
+|\
+| * 99179f8 - (origin/sequence_checking_and_container_width) sequence and cms page width (9 weeks ago) <Hilar>
+* |   ffb716e - Merge branch 'responsive_css' into '9.0' (10 weeks ago) <Robert Rottermann>
+|\ \
+| |/
+| * 28a092a - (origin/responsive_css) responsive css (10 weeks ago) <Hilar>
+|/
+*   5d842f3 - Merge branch 'removed_conflicts_from_old_addon_website_cms_menu_to_website_cms_addons' into '9.0' (2 months ago) <Robert Rottermann>
+|\
+| * 59d8409 - (origin/removed_conflicts_from_old_addon_website_cms_menu_to_website_cms_addons) email_template added (2 months ago) <Hilar>
+| * 007e5ce - cause of issues was due to the old stuff, now try this addon that i have and working (2 months ago) <Hilar>
+|/
+*   53cc11c - Merge branch 'revert-02465de2' into '9.0' (2 months ago) <Robert Rottermann>
+|\
+| * 579966c - (origin/revert-02465de2) Revert "Merge branch 'latest_changes' into '9.0'" (2 months ago) <Robert Rottermann>
+|/
+*   02465de - Merge branch 'latest_changes' into '9.0' (2 months ago) <NirmalaSudhir>
+|\
+| * 1adb9a6 - (origin/latest_changes) latest changes in website_cms-addons (3 months ago) <Yaseen Shareef>
+|/
+* c669ce5 - reverted things manually after merge disaster (3 months ago) <robertrottermann>
+*   eae6279 - Merge branch 'css_changes_menu' into '9.0' (3 months ago) <Robert Rottermann>
+|\
+| *   24bfbfd - (origin/css_changes_menu) Merge branch '9.0' into 'css_changes_menu' (3 months ago) <Robert Rottermann>
+| |\
+| |/
+|/|
+* | d69bd95 - added readme file for todays changes (3 months ago) <Yaseen Shareef>
+* |   c438ada - Merge branch '9.0' of ssh://gitlab.redcor.ch:10022/open-source/website_cms_addons into 9.0 (3 months ago) <Yaseen Shareef>
+|\ \
+* | | 07fe916 - changes in events page (3 months ago) <Yaseen Shareef>
+| | * 45821eb - css changed (3 months ago) <Hilar>
+| |/
+| *   840d3b1 - Merge branch 'hack_to_fix_missing_event_setup' into '9.0' (3 months ago) <Robert Rottermann>
+| |\
+|/ /
+| * d100556 - (origin/hack_to_fix_missing_event_setup) added class to fix missng event setup (3 months ago) <robert>
+|/
+*   8a6374c - resolved conflicts (3 months ago) <Yaseen Shareef>
+|\
+| * d9dfc63 - fixed conflicts (3 months ago) <Hilar>
+| *   50e8581 - Merge branch 'revert-d586bd68' into '9.0' (3 months ago) <Robert Rottermann>
+| |\
+| | * b5c4b0b - (origin/revert-d586bd68) Revert "Merge branch 'moved_cms_page_id_to_afbs_workgroups' into '9.0'" (3 months ago) <Robert Rottermann>
+| |/
+| *   d586bd6 - Merge branch 'moved_cms_page_id_to_afbs_workgroups' into '9.0' (3 months ago) <Robert Rottermann>
+| |\
+| | *   9b5ce08 - Merge branch '9.0' into 'moved_cms_page_id_to_afbs_workgroups' (3 months ago) <Robert Rottermann>
+| | |\
+| | |/
+| |/|
+| | * 96fe7cf - moved cms_page_is to afbs_workgroups event model and email_subscription data to afbs_workgroups data (3 months ago) <Hilar>
+* | | 074729d - removed event.settings (3 months ago) <Yaseen Shareef>
+|/ /
+* |   b1d77b4 - resolved conflict (3 months ago) <Yaseen Shareef>
+|\ \
+| * \   a0097c7 - Merge branch 'css_changes' into '9.0' (3 months ago) <Robert Rottermann>
+| |\ \
+| | |/
+| | * fac5063 - js (3 months ago) <Hilar>
+| | * c37efb1 - changes in css,js,templates (3 months ago) <Hilar>
+| |/
+* | 97f4184 - changes in events and cms pages (3 months ago) <Yaseen Shareef>
+|/
+*   81c9844 - Merge branch '9.0' of ssh://gitlab.redcor.ch:10022/open-source/website_cms_addons into 9.0 (3 months ago) <Yaseen Shareef>
+|\
+| * 0046b34 - removed temp file (3 months ago) <robertrottermann>
+* | e73700d - changes to events, added many2many field for cms pages and also settings for cms root page (3 months ago) <Yaseen Shareef>
+|/
+* e249c32 - resolved mixing up of code (3 months ago) <Yaseen Shareef>
+*   f2deba3 - resolved conflicts (3 months ago) <Yaseen Shareef>
+|\
+| *   179b377 - (origin/events) resolved conflicts (3 months ago) <Yaseen Shareef>
+| |\
+| * | 6ce029f - testing git commit (3 months ago) <Yaseen Shareef>
+| * | 74f60a5 - readme file modified (4 months ago) <Yaseen Shareef>
+* | |   171436c - resolved conflict (3 months ago) <Yaseen Shareef>
+|\ \ \
+| |/ /
+|/| |
+| * |   e1934fa - Merge branch 'removed_bad_sql_query' into '9.0' (3 months ago) <Robert Rottermann>
+| |\ \
+| | * | cedb859 - changes in js and css (3 months ago) <Hilar>
+| * | |   ae49d08 - Merge branch 'removed_bad_sql_query' into '9.0' (3 months ago) <Robert Rottermann>
+| |\ \ \
+| | |/ /
+| | * | b546b29 - css style changes (3 months ago) <Hilar>
+| | * | 374b63c - for editable mode bug (3 months ago) <Hilar>
+| * | |   8a3581b - Merge branch 'removed_bad_sql_query' into '9.0' (3 months ago) <Robert Rottermann>
+| |\ \ \
+| | |/ /
+| | * | 9438fd0 - update in js (3 months ago) <Hilar>
+| * | |   0955b61 - Merge branch 'removed_bad_sql_query' into '9.0' (3 months ago) <Robert Rottermann>
+| |\ \ \
+| | |/ /
+| | * | 0b5727b - chnages in js which makes bug to edit the cms (3 months ago) <Hilar>
+| * | |   1b16cae - Merge branch 'removed_bad_sql_query' into '9.0' (3 months ago) <Robert Rottermann>
+| |\ \ \
+| | |/ /
+| | | /
+| | |/
+| |/|
+| | * 9d9b4f4 - Removed bad query (3 months ago) <Hilar>
+| | * e299a33 - Removed bad query (3 months ago) <Hilar>
+| | * 5b3a6c4 - test changse (3 months ago) <Hilar>
+| * |   a4f075d - Merge branch 'Commontemplates' into '9.0' (3 months ago) <Robert Rottermann>
+| |\ \
+| | |/
+| | * 891dd9e - changed the addon model name and fix the css issue (3 months ago) <Hilar>
+| | * d702a3e - changed the addon model name and fix the css issue (3 months ago) <Hilar>
+| | * 2215bc7 - Major Changes in addon by making common Templates (3 months ago) <Hilar>
+| | * 462049a - Major Changes in addon by making common Templates (3 months ago) <Hilar>
+| | * 2dc0589 - Major Changes in addon by making common Templates (3 months ago) <Hilar>
+| |/
+* | 773c582 - added relation from events to cms pages, and overridden the email template for event subscription to take the body from the related cms page (4 mont
+|/
+* 9c7f246 - changes in depends addons (4 months ago) <Hilar>
+*   138945c - (origin/master) Merge branch 'develop' into 'master' (4 months ago) <Robert Rottermann>
+|\
+| * 530ec0b - new security and config params (4 months ago) <Hilar>
+| * 3dbfb7b - The config menu for cms dynamic menus (4 months ago) <Hilar>
+|/
+* c3ae9fe - add README (4 months ago) <Hilar>

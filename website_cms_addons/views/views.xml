@@ -1,0 +1,93 @@
+<openerp>
+    <data>
+        <record id="view_afbs_menu_form" model="ir.ui.view">
+            <field name="name">AFBS Website Menu Configuration</field>
+            <field name="model">website.cms_menu</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                    </header>
+                    <group string="Website Configuration">
+                        <group>
+                            <field name="main_frame" widget="selection"/>
+                            <field name="front_cms" widget="selection"/>
+                            <field name="template_menu_id" widget="checkbox"/>
+                            <field name="template_imagegrid_id" widget="checkbox"/>
+                        </group>
+                        <group></group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="event_config_view_inherited" model="ir.ui.view">
+            <field name="name">Event Config View Inherited</field>
+            <field name="model">event.settings</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                    </header>
+                    <group string="Event CMS Configuration">
+                        <group>
+                            <field name="root_cms_page_id" widget="selection"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_afbs_menu_config" model="ir.actions.act_window">
+            <field name="name">Menu Configuration</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">website.cms_menu</field>
+            <field name="view_mode">form</field>
+            <field name="view_type">form</field>
+            <field name="target">inline</field>
+        </record>
+
+
+        <record id="action_event_config" model="ir.actions.act_window">
+            <field name="name">Event Configuration</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">event.settings</field>
+            <field name="view_mode">form</field>
+            <field name="view_type">form</field>
+            <field name="target">inline</field>
+        </record>
+        
+        <record id="action_event_clean_orpahns" model="ir.actions.server">
+            <field name="name">Clean orphaned Event CMS Pages</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_cms_page" />
+            <field name="state">code</field>
+            <field name="code">self.clean_orphans(cr, uid, context=context)</field>
+        </record>
+
+
+        <menuitem id="cms_admin_config"
+                  name="Configuration"
+                  parent="website_cms.menu_cms_root"
+                  sequence="100"/>
+        <menuitem id="workgroup_dashboard_menu_child"
+                  name="Website"
+                  parent="website_cms_addons.cms_admin_config"
+                  action="action_afbs_menu_config"
+                  sequence="1" />
+        <menuitem id="event_setting_menu"
+                  name="Events"
+                  parent="website_cms_addons.cms_admin_config"
+                  action="action_event_config"
+                  sequence="2" />
+        <menuitem
+            id="afbs_clean_orphan_event_cms_child"
+            name="Clean orphaned event pages"
+            parent="website_cms_addons.event_setting_menu"
+            action="action_event_clean_orpahns"
+            sequence="11"/>
+                  
+    </data>
+</openerp>

@@ -1,0 +1,140 @@
+general:
+--------
+    to have un-minimized files loaded, load tinymce.js in xml/templates.xml
+    instead of tinymce.min.js
+
+    the plugins to load are defined in:
+      static/js/html_editor.js
+
+    css are loaded in static/js/html_editor.js ~ line 162
+
+
+advanced editor:
+----------------
+  https://github.com/christiaan/tinymce-codemirror
+
+  proceed like in the readme
+  to install cd into the codemirror folder
+  
+
+version:
+--------
+    static/js/lib/tinymce/tinymce.min.js:
+        majorVersion:"4",
+        minorVersion:"3.11",
+        releaseDate:"2016-04-25"
+    tiny_mce_orig/tinymce/js/tinymce/tinymce.js
+        majorVersion: '4',
+        minorVersion: '6.4',
+        releaseDate: '2017-06-13'
+
+
+files/folder to copy into custody:
+----------------------------------
+    static/js/lib/tinymce/plugins/afbsanchor
+    static/js/lib/tinymce/plugins/afbsanchormanage
+    static/js/lib/tinymce/plugins/afbsh2t40
+
+    static/js/lib/tinymce/plugins/afbsh3t30
+    static/js/lib/tinymce/plugins/afbsh3t40
+    static/js/lib/tinymce/plugins/afbstitle
+    static/js/lib/tinymce/plugins/link
+    static/js/lib/tinymce/plugins/summary
+
+
+
+achtung !!!!!!!!!!
+link muss speziell behandelt werden: was wurde geändert?
+
+
+scripts to move things:
+-----------------------
+    0. download tiny mce to:
+        tiny_mce_orig/
+        unzip it
+
+    1. script to move things:
+        mkdir tmp -p
+        rm -rf tmp/*
+        cp -r static/js/lib/tinymce/plugins/afbsanchor tmp
+        cp -r static/js/lib/tinymce/plugins/afbsanchormanage tmp
+        cp -r static/js/lib/tinymce/plugins/afbsh2t40 tmp
+
+        cp -r static/js/lib/tinymce/plugins/afbsh3t30 tmp
+        cp -r static/js/lib/tinymce/plugins/afbsh3t40 tmp
+        cp -r static/js/lib/tinymce/plugins/afbstitle tmp
+        cp -r static/js/lib/tinymce/plugins/link tmp
+        cp -r static/js/lib/tinymce/plugins/summary tmp
+
+    2. remove old library
+        rm -rf static/js/lib/tinymce/
+
+    3. copy new library
+        rsync -av  tiny_mce_orig/tinymce/js/tinymce/ static/js/lib/tinymce/
+
+    4. script to move things back:
+        # delete existing so nothing unexpected remains
+        rm -r static/js/lib/tinymce/plugins/afbsanchor
+        rm -r static/js/lib/tinymce/plugins/afbsanchormanage
+        rm -r static/js/lib/tinymce/plugins/afbsh2t40
+
+        rm -r static/js/lib/tinymce/plugins/afbsh3t30
+        rm -r static/js/lib/tinymce/plugins/afbsh3t40
+        rm -r static/js/lib/tinymce/plugins/afbstitle
+        rm -r static/js/lib/tinymce/plugins/link
+        rm -r static/js/lib/tinymce/plugins/summary
+        # do the copying
+        cp -r tmp/afbsanchor static/js/lib/tinymce/plugins/afbsanchor
+        cp -r tmp/afbsanchormanage static/js/lib/tinymce/plugins/afbsanchormanage
+        cp -r tmp/afbsh2t40 static/js/lib/tinymce/plugins/afbsh2t40
+
+        cp -r tmp/afbsh3t30 static/js/lib/tinymce/plugins/afbsh3t30
+        cp -r tmp/afbsh3t40 static/js/lib/tinymce/plugins/afbsh3t40
+        cp -r tmp/afbstitle static/js/lib/tinymce/plugins/afbstitle
+        cp -r tmp/link static/js/lib/tinymce/plugins/link
+        cp -r tmp/summary static/js/lib/tinymce/plugins/summary
+
+
+list of changed files:
+----------------------
+    models/QwebExtend.py
+    models/__init__.py
+    static/js/afbs_docs.js
+    static/js/afbs_events.js
+    static/js/afbs_medias.js
+    static/js/html_editor.js
+    static/js/lib/tinymce/plugins/afbsanchor/plugin.js
+    static/js/lib/tinymce/plugins/afbsanchor/plugin.min.js
+    static/js/lib/tinymce/plugins/afbsanchormanage/plugin.js
+    static/js/lib/tinymce/plugins/afbsanchormanage/plugin.min.js
+    static/js/lib/tinymce/plugins/afbsh2t40/plugin.js
+    static/js/lib/tinymce/plugins/afbsh2t40/plugin.min.js
+
+
+    static/js/lib/tinymce/plugins/afbsh3t30/plugin.js
+    static/js/lib/tinymce/plugins/afbsh3t30/plugin.min.js
+    static/js/lib/tinymce/plugins/afbsh3t40/plugin.js
+    static/js/lib/tinymce/plugins/afbsh3t40/plugin.min.js
+    static/js/lib/tinymce/plugins/afbstitle/plugin.js
+    static/js/lib/tinymce/plugins/afbstitle/plugin.min.js
+    static/js/lib/tinymce/plugins/link/plugin.js
+    static/js/lib/tinymce/plugins/summary/plugin.js
+    static/js/lib/tinymce/plugins/summary/plugin.min.js
+    xml/templates.xml
+    py/__init__.py
+    py/mail.py
+    static/description/icon.png
+    static/description/index.html
+    static/description/web_tinymce1.png
+    static/description/web_tinymce2.png
+    static/js/html_editor.js
+    static/styles/config.rb
+    static/styles/css/ie.css
+    static/styles/css/print.css
+    static/styles/css/screen.css
+    static/styles/css/tinymce.css
+    static/styles/sass/ie.scss
+    static/styles/sass/print.scss
+    static/styles/sass/screen.scss
+    static/styles/sass/tinymce.scss
+    xml/templates.xml

@@ -1,0 +1,19 @@
+.space_remove table tbody tr td:first-child{
+        display: none !important;
+}
+.space_remove table thead tr th:first-child{
+        display: none !important;
+}
+.space_remove .oe_list_group_name{
+    max-width: 30px !important;
+}
+.btn-creat-user:hover{
+    color: #ffffff !important;
+    background-color: #61c4f0 !important;
+    border-color: #61c4f0 !important;
+}
+.btn-creat-user{
+    background-color: #61c4f0 !important;
+    border-color: #61c4f0 !important;
+}
+

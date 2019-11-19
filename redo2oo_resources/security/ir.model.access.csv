@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_redo2oo_resources_redo2oo_resources,redo2oo_resources.redo2oo_resources,model_redo2oo_resources_redo2oo_resources,,1,0,0,0

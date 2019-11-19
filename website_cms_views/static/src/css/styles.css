@@ -1,0 +1,21 @@
+.even {
+    background-color:#dddddd;
+}
+
+.odd {
+    background-color:#eeeeee;
+}
+
+.item_lpadding_1 {
+    font-weight: bold;
+}
+
+.item_lpadding_2 {
+    padding-left:12px;
+    font-weight: normal;
+}
+
+.item_lpadding_3 {
+    padding-left:24px;
+    font-weight: normal;
+}

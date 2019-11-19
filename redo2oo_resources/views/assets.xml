@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="redo2oo" name="redo2oo style_back" inherit_id="website.assets_frontend">
+        <xpath expr="link[last()]" position="after">
+            <link rel="shortcut icon" href="/redo2oo_resources/static/src/images/favicon.ico" type="image/x-icon"/>
+            <link rel="favicon.ico"   href="/redo2oo_resources/static/src/images/favicon.ico" type="image/x-icon"/>
+            <link rel="stylesheet"    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" type='text/css'/>
+            <link rel='stylesheet'    href='https://fonts.googleapis.com/css?family=Rasa:400,500,600' type='text/css'/>
+            <link rel="stylesheet"    href="/redo2oo_resources/static/src/less/style.less" type="text/less"/>
+        </xpath>
+    </template>    
+</odoo>

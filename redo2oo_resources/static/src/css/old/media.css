@@ -1,0 +1,691 @@
+﻿
+/*body{
+    margin-top: 0px !important;
+}*/
+@media (min-width: 767px) {
+  nav.navbar + #wrapwrap {
+    padding-top: 45px;
+  }
+}
+@media (min-width: 5120px){
+    .hamburger-fix {
+        right: 1995px !important;
+    }
+    #return-to-top{
+        right: 41.5%;
+    }
+}
+@media (max-width: 4096px){
+    .hamburger-fix {
+        right: 1483px !important;
+    }
+    #return-to-top{
+        right: 39.4%;
+    }
+}
+@media (max-width: 3840px){
+    .hamburger-fix {
+        right: 1355px !important;
+    }
+    #return-to-top{
+        right: 38.6%;
+    }
+}
+@media (max-width: 2880px){
+    .hamburger-fix {
+        right: 874px !important;
+    }
+     #return-to-top{
+        right: 34.9%;
+    }
+}
+@media (max-width: 2732px){
+    .hamburger-fix {
+        right: 801px !important;
+    }
+    #return-to-top{
+        right: 34.1%;
+    }
+}
+@media (max-width: 2560px){
+    .hamburger-fix {
+        right: 715px !important;
+    }
+    #return-to-top{
+        right: 33%;
+    }
+}
+@media (max-width: 2304px){
+    .hamburger-fix {
+        right: 587px !important;
+    }
+    #return-to-top{
+        right: 31.1%;
+    }
+}
+@media (max-width: 2160px){
+    .hamburger-fix {
+        right: 515px !important;
+    }
+    #return-to-top{
+        right: 29.9%;
+    }
+}
+@media (max-width: 2048px){
+    .hamburger-fix {
+        right: 459px !important;
+    }
+    #return-to-top{
+        right: 28.8%;
+    }
+}
+@media (max-width: 1980px){
+   .hamburger-fix {
+        right: 423px !important;
+    }
+    #return-to-top{
+        right: 28%;
+    }
+}
+
+@media (max-width: 1921px){
+   .hamburger-fix {
+        right: 395px !important;
+    }
+    #return-to-top{
+        right: 27.3%;
+    }
+}
+@media (max-width: 1600px){
+   .hamburger-fix {
+        right: 235px !important;
+    }
+    #return-to-top{
+        right: 22.7%;
+    }
+}
+@media (max-width: 1536px){
+   .hamburger-fix {
+        right: 203px !important;
+    }
+    #return-to-top{
+        right: 21.7%;
+    }
+}
+@media (max-width: 1440px){
+   .hamburger-fix {
+        right: 155px !important;
+    }
+    #return-to-top{
+        right: 19.8%;
+    }
+}
+@media (max-width: 1366px){
+   .hamburger-fix {
+        right: 110px !important;
+    }
+    #return-to-top{
+        right: 17.5%;
+    }
+}
+@media all and (-webkit-min-device-pixel-ratio:0) and (max-width: 1366px) {
+    .hamburger-fix {
+        right: 118px !important;
+    }
+}
+
+@media (max-width: 1356px){
+   .hamburger-fix {
+        right: 113px !important;
+    }
+    #return-to-top{
+        right: 17.8%;
+    }
+}
+@media (max-width: 1280px){
+   .hamburger-fix {
+        right: 75px !important;
+    }
+    #return-to-top{
+        right: 15.9%;
+    }
+}
+@media (max-width: 1200px){
+   .hamburger-fix {
+        right: 35px !important;
+    }
+    #return-to-top{
+        right: 13.8%;
+    }
+}
+@media (min-width: 1200px){
+main>.container, main > #wrap > .container, .topNavBar > .container, footer > .container, .wrapper > .container, .banner > .container
+    {
+        width: 1180px !important;
+        padding-right: 25px !important;
+        padding-left: 25px !important;
+    }
+
+ }
+@media (max-width:1199px)
+{
+   .hamburger-fix {
+        right: 115px !important;
+   }
+   #return-to-top{
+        right: 16.7%;
+   }
+   .triggerMenu
+   {
+       font-size: 20px;
+       top: 32px;
+   }
+   a.list-group-item
+   {
+       padding: 10px 0px;
+   }
+   .posAbsolute
+   {
+       width: 83.8% !important;
+   }
+   .ri-grid ul li, .mini-submenu
+   {
+       height: 136px !important;
+   }
+   .report-title
+   {
+       font-size: 35px;
+   }
+   .mini-submenu {
+        width: 136px !important;
+        z-index: 6;
+    }
+   .stick 
+   {
+        width:970px !important;
+   }
+   .sticklogin {
+        top: 90px!important;
+    }
+    .sticklogout {
+        top: 140px !important;
+    }
+   .list-group 
+   {
+        width: 18.23em;
+    }
+}
+@media (max-width:1024px)
+{
+    .hamburger-fix {
+        right: 27px !important;
+    }
+    #return-to-top{
+        right: 10.8%;
+    }
+    a.list-group-item
+    {
+        font-size: 18px;
+        padding: 10px 5px;
+    }
+   .triggerMenu
+   {
+       font-size: 20px;
+   }
+}
+@media (max-width:991px)
+{
+    .hamburger-fix {
+        right: 120px !important;
+    }
+    #return-to-top {
+        right: 17.1%;
+    }
+    .posAbsolute 
+    {
+        width: 84.2% !important;
+    }
+    .stick
+    {
+        width: 750px !important;
+
+    }
+    .sticklogin {
+        top: 90px !important;
+    }
+    .sticklogout {
+        top: 139px !important;
+    }
+    .mini-submenu 
+    {
+        width: 98px !important;
+        height: 80px !important;
+    }
+    .ri-grid ul li
+    {
+       height: 100px !important;
+    }
+    .list-group {
+        width: 13.75em !important;
+    }
+    a.list-group-item
+    {
+        padding: 5px;
+    }
+    .triggerMenu
+    {
+        display: none;
+    }
+    .hamCollect
+    {
+        margin: 25% 0% !important;
+    }
+    .mainsections h1
+    {
+        font-size: 36px;
+    }
+    .mainsections h2, .report-title
+    {
+        font-size: 28px !important;
+    }
+    .mainsections p, .innerLink
+    {
+        font-size: 15px !important;
+    }
+    .row-news h3
+    {
+        font-size: 18px;
+    }
+    .hamCollect
+    {
+        width: 100%;
+        margin: 0;
+    }
+    .hamCollect>.icon-bar
+    {
+        width: 100%;
+    }
+    #oe_main_menu_navbar li a {
+        margin:4px 0 !important;
+        padding: 8px 4.5px !important;
+        font-size:13px !important;
+
+    }
+}
+/*@media (max-width:860px) {
+    #oe_main_menu_navbar li a {
+        font-size:13px !important;
+    }
+}*/
+@media (max-width:980px)
+{
+    .hamburger-fix {
+        right: 115px !important;
+    }
+    #return-to-top{
+        right: 16.7%;
+    }
+}
+@media (max-width:800px)
+{
+    .hamburger-fix {
+        right: 25px !important;
+    }
+    #return-to-top {
+        right: 9.3%;
+    }
+}
+@media (max-width:768px)
+{
+    .hamburger-fix {
+        right: 9px !important;
+    }
+    #return-to-top {
+        right: 7.3%;
+    }
+}
+@media (max-width:767px)
+{
+    .hamburger-fix {
+        top: 121px !important;
+        right: 25px !important;
+    }
+    p {
+        text-align: justify !important;
+    }
+    main>.container, main > #wrap > .container, .topNavBar > .container, footer > .container, .wrapper > .container, .banner > .container
+    {
+        padding-right: 25px !important;
+        padding-left: 25px !important;
+    }
+    .logoBar, .searchBar
+    {
+        width: 50% !important;
+    }
+    .posAbsolute 
+    {
+        width: 80.8% !important;
+    }
+    .stick 
+    {
+        width: 716px !important;
+        right:25px !important;
+    }
+
+    .sticklogin, .sticklogout {
+        top: 123px !important;
+    }
+    .mainsections
+    {
+        margin-top: 30px;
+    }
+    .row-news, .call-out 
+    {
+        margin-top: 10px;
+    }
+    .margin40 
+    {
+        margin-top: 15px !important;
+    }
+    nav.navbar + #wrapwrap
+    {
+        padding-top: 0;
+    }
+    .topNavBar {
+        position:fixed;
+        top:0;
+    }
+    .positionR {
+        margin-top:123px;
+    }
+    .top-menu{
+        margin:0 !important;
+    }
+    main>.container, main > #wrap > .container, .topNavBar > .container, footer > .container, .wrapper > .container, .banner > .container
+    {
+        padding-right: 25px !important;
+        padding-left: 25px !important;
+    }
+    .s_website_form.form-horizontal.container-fluid.mt32 {
+        padding:0 !important;
+    }
+}
+@media (max-width:700px)
+{
+    #return-to-top {
+        right: 9.3%;
+    }
+    .mini-submenu 
+    {
+        height: 80px !important;
+        width: 5.6em !important;
+        border: none;
+
+    }
+    .list-group {
+        width: 12.5em !important;
+    }
+    .hamCollect
+    {
+        margin: 28% 0% !important;
+    }
+}
+@media (max-width:640px)
+{
+    #return-to-top {
+        right: 8.4%;
+    }
+    .mini-submenu 
+    {
+        height: 70px !important;
+        width: 5em !important;
+        top: -2px;
+    }
+    .list-group {
+        width: 17.5em !important;
+    }
+}
+@media (max-width:600px)
+{
+    #return-to-top {
+        right: 8%;
+    }
+    .mini-submenu {
+        height: 70px !important;
+        width: 4.5em !important;
+    }
+    .oe_website_login_container {
+        margin-top: 45px !important;
+        width: 100% !important;
+    }
+}
+@media (max-width:560px)
+{
+    #return-to-top {
+        right: 7.2%;
+    }
+    .mini-submenu {
+        height: 50px !important;
+        width: 4em !important;
+    }
+    .list-group {
+        width: 20em !important;
+    }
+    .hamCollect {
+        margin: 15% 0% !important;
+    }
+    .ri-grid ul li{
+        height: 70px !important;
+    }
+    .mainsections {
+        top: -22px;
+    }
+
+}
+@media (max-width:509px)
+{
+   .posAbsolute 
+   {
+        width: 76.5% !important;
+    }
+}
+@media (max-width:480px)
+{
+    #return-to-top {
+        right: 5.9%;
+    }
+    .hamburger-fix {
+        top: 174px !important;
+        right: 27px !important;
+    }
+    .mini-submenu {
+        height: 50px !important;
+        width: 3.25em !important;
+        top: -2px;
+    }
+    .mainsections h1 {
+    margin-top: 29px !important;
+    }
+    .logoBar, .searchBar
+    {
+        width: 100% !important;
+        padding:0 !important;
+    }
+    .add-on 
+    {
+        width: 100%;
+        margin-left: 0 !important;
+    }
+    .ri-grid ul li
+    {
+        height: 70px !important;
+    }
+    .report-title 
+    {
+        margin: 20px 0 30px;
+    }
+    .report 
+    {
+        margin: 0px 0 30px;
+    }
+    .logoBar img
+    {
+        width: 100%;
+        display: block;
+        margin:0 auto;
+        padding: 5px 0;
+    }
+    .sticklogin, .sticklogout {
+        top: 175px !important;
+    }
+     .mainsections h1
+    {
+        font-size: 30px;
+    }
+    .mainsections h2, .report-title
+    {
+        font-size: 25px !important;
+    }
+    .mainsections p
+    {
+        font-size: 13px;
+    }
+    .row-news h3
+    {
+        font-size: 16px;
+    }
+    .top-menu
+    {
+        width: auto;
+        float: right;
+        margin: 0 auto;
+        display: block;
+    }
+    .hamCollect
+    {
+        width: 100%;
+        margin: 0;
+    }
+    .hamCollect>.icon-bar
+    {
+        width: 100%;
+    }
+    .list-group {
+        width: 17.5em !important;
+    }
+}
+@media (max-width:414px)
+{
+    #return-to-top {
+        right: 6.8%;
+    }
+    .hamburger-fix {
+        top: 167px !important;
+        right: 27px !important;
+    }
+    /*div#sticker {
+    top: -6px;
+    }*/
+    /*.mainsections h1 {
+        margin-top: 29px !important;
+    }*/
+    .mini-submenu {
+        height: 50px !important;
+        width: 3.25em !important;
+        top: 0px;
+    }
+    .sticklogin{
+        top: 169px !important;
+    }
+    .sticklogout {
+        top: 167px !important;
+    }
+    .oe_website_login_container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+@media (max-width:400px)
+{
+    .mini-submenu {
+        height: 50px !important;
+        width: 3.25em !important;
+        top: 0px;
+    }
+    .sticklogin{
+        top: 175px !important;
+    }
+    .sticklogout {
+        top: 162px !important;
+    }
+ }
+@media (max-width:375px)
+{
+    .hamburger-fix {
+        top: 164px !important;
+        right: 26px !important;
+    }
+    .sticklogin, .sticklogout {
+        top: 163px !important;
+    }
+
+}
+@media (max-width:360px)
+{
+    .hamburger-fix {
+        top: 162px !important;
+    }
+    nav.navbar + #wrapwrap
+    {
+        padding-top: 0px;
+    }
+    .banner
+    {
+        display: none;
+    }
+    .mini-submenu {
+        height: 50px !important;
+        width: 3.25em !important;
+        top: -8px;
+    }
+     .sticklogin {
+        top: 162px !important;
+    }
+    .sticklogout {
+        top: 170px !important;
+    }
+
+
+}
+@media (max-width:320px)
+{
+    #return-to-top {
+        right: 8%;
+    }
+    .hamburger-fix {
+        top: 158px !important;
+    }
+     .sticklogin, .sticklogout {
+        top: 163px !important;
+    }
+    .mainsections h1 {
+        margin-top: 0px !important;
+    }
+   /* .oe_website_login_container {
+        padding-right: 105px;
+        margin: 45px auto !important;
+    }*/
+    .oe_login_buttons .btn {
+    font-size: 11px;
+    }
+
+}
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+    #object_body li:before, .event-body > ul > li:before {
+	font-size: 36px !important;
+    line-height: 21px !important;
+    content: "▪" !important;
+    margin-right: 4px !important;
+}
+}

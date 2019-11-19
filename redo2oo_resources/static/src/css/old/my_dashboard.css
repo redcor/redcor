@@ -1,0 +1,42 @@
+.panel-custom{
+    background-color: #61C4F0 !important;
+    padding: 1px 30px;
+    color: #fff !important;
+}
+.panel-side{
+    margin: 20px 0;
+}
+.panel-fullview{
+    border: 1px solid #61C4F0;
+}
+.panel-inside{
+    background: #f0f0f0;
+    padding: 10px;
+    margin: 10px 0;
+    border: 0px solid #ccc;
+    font-size: 15px !important;
+}
+.o_mail_thread .dateseperator_dashboard{
+    border-bottom: solid #fff 2px;
+}
+.panel-group .panel, .panel-heading{
+    border-radius: 0px !important;
+}
+.openerp .oe-control-panel .oe-view-title{
+    font-size: 24px !important;
+}
+.o_mail_thread .o_thread_message .o_thread_message_core div li a:hover{
+    text-decoration: underline !important;
+}
+.o_thread_delete_cms_page, .o_thread_backend_action, .o_thread_event_backend_action{
+   opacity: 0;
+}
+.o_thread_message_core:hover  .o_thread_delete_cms_page, .o_thread_message_core:hover .o_thread_backend_action, .o_thread_message:hover .o_thread_event_backend_action{
+    opacity:1;
+}
+.o_thread_backend_action:hover, .o_thread_event_backend_action:hover, .o_thread_delete_cms_page:hover   {
+    color:#666;
+}
+.o_thread_message_core a {
+    word-break: unset !important;
+}

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <!--***********************************************************-->
+    <!--name="Subpages listing"-->
+    <!--***********************************************************-->
+    <template id="subpages_listing" name="Subpages listing">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <section class="container" style="margin-bottom:80px;">
+                        <!-- <h2 t-field="main_object.name"/> -->
+                        <div class="paddL" t-field="main_object.sudo().body"/>
+                        <t t-set="listing_items" t-value="main_object.get_listing()"/>
+                        <t t-if="not listing_items">
+                            <p class="no-items">no content yet</p>
+                        </t>
+                        <t t-if="listing_items">
+                            <table class="cms-subpages-container paddL">
+                                <tr>
+                                    <td>
+                                        <p class="cms-subpages-header" t-field="main_object.sudo().description"/>
+                                    </td>
+                                </tr>
+                                <tr t-foreach="listing_items.sudo()" t-as="item">
+                                    <td class="cms-subpage">
+                                        <a class="item-link"
+                                            t-att-href="item.website_url">
+                                            <span>
+                                                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                            </span>
+                                            <span t-field="item.name"/>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </t>
+                    </section>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- enable view for cms -->
+    <record id="website_cms_views.subpages_listing" model="ir.ui.view">
+        <field name="cms_view" eval="1" />
+    </record>
+
+    <!--***********************************************************-->
+    <!--Page map listing-->
+    <!--***********************************************************-->
+    <template id="page_map_listing" name="Page map listing">
+        <t t-call="website.layout">
+            <div id="wrap">
+            <div class="oe_structure">
+                <section class="container" style="margin-bottom:80px">
+                    <div class="col-sm-12 text-center">
+                        <h2></h2>
+                    </div>
+                        <link rel="stylesheet" href="/website_cms_views/static/src/css/styles.css"/>
+                        <h2 t-field="main_object.name" />
+                        <t t-set="listing_items" t-value="main_object.get_listing()"/>
+                        <t t-if="not listing_items">
+                            <p class="no-items">no contents yet</p>
+                        </t>
+                        <t t-if="listing_items">
+                            <div>Sitemap of current page:
+                                <t t-set="depth_level" t-value="0"/>
+                                <t t-foreach="listing_items" t-as="item">
+                                    <t t-call="website_cms_views.item_recursive_listing"/>
+                                </t>
+                            </div>
+                        </t>
+                    </section>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="website_cms_views.item_recursive_listing" name="item recursive listing">
+        <t t-set="depth_level" t-value="depth_level + 1"/>
+        <!-- <div t-attf-class="{{ item_parity }} item_lpadding_#{depth_level}"> -->
+        <div t-attf-class="item_lpadding_#{depth_level}">
+            <div t-field="item.name" />
+            <div t-field="item.description" />
+            <a class="item-link"
+                t-att-href="item.website_url">
+                    more
+            </a>
+            <!-- media of each page: -->
+            <t t-set="listing_medias" t-value="item.get_media_listing()"/>
+            <t t-if="listing_medias">
+                Media:
+                <t t-foreach="listing_medias" t-as="media">
+                    <a class="item-link"
+                        t-att-href="media.website_url">
+                            <span t-field="media.name" />
+                    </a>
+                </t>
+            </t>
+            <!-- end media of each page: -->
+            <t t-set="listing_items" t-value="item.get_listing()"/>
+            <t t-if="listing_items">
+                <div t-attf-class="item_lpadding_#{depth_level}">
+                    <t t-foreach="listing_items" t-as="item">
+                        <t t-call="website_cms_views.item_recursive_listing"/>
+                    </t>
+                </div>
+            </t>
+        </div>
+    </template>
+
+    <!-- enable view for cms -->
+    <record id="website_cms_views.page_map_listing" model="ir.ui.view">
+        <field name="cms_view" eval="1" />
+    </record>
+
+    <!--***********************************************************-->
+    <!--name="Media listing"-->
+    <!--***********************************************************-->
+    <template id="media_listing" name="Media listing">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <section class="container" style="margin-bottom:80px">
+                        <h2 t-field="main_object.name" />
+                        <t t-set="listing_items" t-value="main_object.get_media_listing()"/>
+                        <t t-if="not listing_items">
+                            <p class="no-items">no contents yet</p>
+                        </t>
+                        <t t-if="listing_items">
+                            <ul>Media:
+                                <t t-foreach="listing_items" t-as="item">
+                                    <li t-attf-class="{{ item_parity }}">
+                                        <span t-field="item.name" />
+                                        <br/>
+                                        <span t-field="item.description" />
+                                        <br/>
+                                        <a class="item-link"
+                                            t-att-href="item.website_url">
+                                            more
+                                        </a>
+                                    </li>
+                                </t>
+                            </ul>
+                        </t>
+                    </section>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- enable view for cms -->
+    <record id="website_cms_views.media_listing" model="ir.ui.view">
+        <field name="cms_view" eval="1" />
+    </record>
+
+</odoo>
