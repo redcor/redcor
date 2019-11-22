@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="invoice_form_add_isr_ref">
+           <field name="name">account.move.form.isr.ref</field>
+           <field name="model">account.move</field>
+           <field name="type">form</field>
+           <field name="inherit_id" ref="account.view_move_form"/>
+           <field name="arch" type="xml">
+             <xpath expr="//button[@name='action_invoice_sent']" position="after">
+                 <button type="object"
+                     string="ISR with invoice details"
+                     name="print_isr_with_invoice_details"
+                     attrs="{'invisible': ['|',('invoice_sent','=',True), ('state', '!=', 'posted')]}"
+                     class="oe_highlight"/>
+                 <button type="object"
+                     string="ISR with invoice details"
+                     name="print_isr_with_invoice_details"
+                     attrs="{'invisible':['|',('invoice_sent','=',False), ('state', '!=', 'posted')]}"/>
+             </xpath>
+           </field>
+         </record>
+    </data>
+</odoo>

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.payment_slip</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='isr']" position="after">
+                    <h2>Extra Settings</h2>
+                    <div class="row mt16 o_settings_container" id="extra_settings">
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+
+                                <div class="content-group">
+                                    <div class="row mt16">
+                                        <label for="header_logo" class="col-md-5 o_light_label"/>
+                                        <field name="header_logo" widget="image" class="oe_avatar" options='{"size": [60, 60]}'/>
+                                    </div>
+                                    <div class="row mt16">
+                                        <label for="header_logo_width_percent" class="col-md-5 o_light_label"/>
+                                        <field name="header_logo_width_percent"/>
+                                    </div>
+                                    <div class="row mt16">
+                                        <label for="address_hor_distance_from_left" class="col-md-5 o_light_label"/>
+                                        <field name="address_hor_distance_from_left"/>
+                                    </div>
+                                    <div class="row mt16">
+                                        <label for="address_vert_distance_from_bottom" class="col-md-5 o_light_label"/>
+                                        <field name="address_vert_distance_from_bottom"/>
+                                    </div>
+                                    <div class="row mt16">
+                                        <label for="address_font_size" class="col-md-5 o_light_label"/>
+                                        <field name="address_font_size"/>
+                                    </div>
+                                    <div class="row mt16">
+                                        <label for="generate_esr" class="col-md-5 o_light_label"/>
+                                        <field name="generate_esr"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

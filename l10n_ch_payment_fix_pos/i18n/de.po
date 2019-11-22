@@ -1,0 +1,86 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * l10n_ch_payment_fix_pos
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: l10n-switzerland (13.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-27 02:48+0000\n"
+"PO-Revision-Date: 2016-05-26 13:58+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: German (http://www.transifex.com/oca/OCA-l10n-switzerland-9-0/language/de/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: l10n_ch_payment_fix_pos
+#: model:ir.ui.view,arch_db:l10n_ch_payment_fix_pos.invoice_form_add_bvr_ref
+msgid "BVR/ESR with invoice details"
+msgstr "BVR/ESR mit Rechnungsangaben"
+
+#. module: l10n_ch_payment_fix_pos
+#: code:addons/l10n_ch_payment_fix_pos/models/payment_slip.py:140
+#, python-format
+msgid "Invoice Date"
+msgstr "Rechnungsdatum"
+
+#. module: l10n_ch_payment_fix_pos
+#: code:addons/l10n_ch_payment_fix_pos/models/payment_slip.py:168
+#, python-format
+msgid "Quantity"
+msgstr "Menge"
+
+#. module: l10n_ch_payment_fix_pos
+#: code:addons/l10n_ch_payment_fix_pos/models/payment_slip.py:168
+#, python-format
+msgid "Unit Price"
+msgstr "Einzelpreis"
+
+#. module: l10n_ch_payment_fix_pos
+#: code:addons/l10n_ch_payment_fix_pos/models/payment_slip.py:168
+#, python-format
+msgid "Taxes"
+msgstr "Steuern"
+
+#. module: l10n_ch_payment_fix_pos
+#: code:addons/l10n_ch_payment_fix_pos/models/payment_slip.py:168
+#, python-format
+msgid "Price"
+msgstr "Preis"
+
+#. module: l10n_ch_payment_fix_pos
+#: code:addons/l10n_ch_payment_fix_pos/models/payment_slip.py:212
+#, python-format
+msgid "Subtotal"
+msgstr "Zwischensumme"
+
+#. module: l10n_ch_payment_fix_pos
+#: code:addons/l10n_ch_payment_fix_pos/models/payment_slip.py:248
+#, python-format
+msgid "Total"
+msgstr "Gesamt"
+
+#. module: l10n_ch_payment_fix_pos
+#: code:addons/l10n_ch_payment_fix_pos/models/payment_slip.py:333
+#, python-format
+msgid "Sponsorship"
+msgstr "Trägerschaft"
+
+#. module: l10n_ch_payment_fix_pos
+#: code:addons/l10n_ch_payment_fix_pos/models/payment_slip.py:333
+#, python-format
+msgid "Comment"
+msgstr "Kommentar"
+
+
+#. module: membership
+#: model:ir.model.fields,field_description:membership.field_res_partner_free_member
+#: selection:membership.membership_line,state:0
+#: selection:report.membership,membership_state:0
+#: selection:res.partner,membership_state:0
+msgid "Free Member"
+msgstr "Vereinsmitglied"
